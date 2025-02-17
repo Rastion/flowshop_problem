@@ -1,0 +1,39 @@
+{
+    "entry_point": "flowshop_problem:FlowshopProblem",
+    "default_params": {
+      "instance_file": "instances/tai20_5.txt"
+    },
+    "problem_type": "Flowshop Scheduling",
+    "description": "In the flowshop scheduling problem, a set of jobs must be processed on every machine of the shop in the same order. On the first machine, jobs are processed one after another starting at time 0. For subsequent machines, a job can only begin once it has finished processing on the previous machine and the machine is free (i.e., the previous job on that machine is complete). The goal is to find a job permutation that minimizes the makespan – the time when the last job is completed on the last machine.",
+    "keywords": [
+      "flowshop",
+      "scheduling",
+      "permutation",
+      "makespan",
+      "Taillard"
+    ],
+    "data_format": {
+      "instance_file": {
+        "format": "A text file containing: first line with five integers (number of jobs, number of machines, seed used to generate the instance, upper bound, lower bound); followed by one line per machine listing the processing times for each job on that machine."
+      }
+    },
+    "decision_variables": {
+      "job_sequence": {
+        "type": "list of int",
+        "description": "A permutation of job indices (0-indexed) representing the processing order of jobs."
+      }
+    },
+    "objective": {
+      "type": "minimization",
+      "function": "Makespan = Completion time of the last job on the last machine",
+      "description": "Minimize the makespan, which is the time when all jobs have been processed by all machines."
+    },
+    "solution_representation": "A list of job indices (0-indexed) representing the sequence in which jobs are processed.",
+    "compatible_optimizers": [
+      "genetic_algorithm",
+      "simulated_annealing",
+      "particle_swarm",
+      "tabu_search"
+    ]
+  }
+  
