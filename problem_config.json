@@ -3,11 +3,14 @@
     "default_params": {
       "instance_file": "instances/tai20_5.txt"
     },
-    "problem_type": "Flowshop Scheduling",
+    "creator": "Rastion",
+    "type": "problem",
+    "problem_name": "Flowshop scheduling",
     "description": "In the flowshop scheduling problem, a set of jobs must be processed on every machine of the shop in the same order. On the first machine, jobs are processed one after another starting at time 0. For subsequent machines, a job can only begin once it has finished processing on the previous machine and the machine is free (i.e., the previous job on that machine is complete). The goal is to find a job permutation that minimizes the makespan – the time when the last job is completed on the last machine.",
+    "link_to_dataset": "https://github.com/Rastion/flowshop_problem/blob/main/instances/tai20_5.txt",
     "keywords": [
       "flowshop",
-      "scheduling",
+      "production-scheduling",
       "permutation",
       "makespan",
       "Taillard"
@@ -29,11 +32,8 @@
       "description": "Minimize the makespan, which is the time when all jobs have been processed by all machines."
     },
     "solution_representation": "A list of job indices (0-indexed) representing the sequence in which jobs are processed.",
-    "compatible_optimizers": [
-      "genetic_algorithm",
-      "simulated_annealing",
-      "particle_swarm",
-      "tabu_search"
+    "formulations": [
+      ""
     ]
   }
   
